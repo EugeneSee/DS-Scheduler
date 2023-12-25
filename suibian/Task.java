@@ -1,13 +1,17 @@
 package suibian;
 
+import java.time.Instant;
+
 class Task {
     private String methodName;
     private String inputType;
     private String input;
-    private long timeOfArrival;
+    private Instant timeOfArrival;
     private long startTime;
     private long completionTime;
-    public Task(String methodName, String inputType, String input, long timeOfArrival) {
+    private long ResponseTime;
+    private long turnAroundTime;
+    public Task(String methodName, String inputType, String input, Instant timeOfArrival) {
         this.methodName = methodName;
         this.inputType = inputType;
         this.input = input;
@@ -15,7 +19,7 @@ class Task {
         this.startTime = 0;
         this.completionTime = 0;
     }
-    public long getTimeOfArrival() {
+    public Instant getTimeOfArrival() {
         return timeOfArrival;
     }
 
@@ -59,7 +63,22 @@ class Task {
         this.input = input;
     }
 
-    public void setTimeOfArrival(long timeOfArrival) {
+    public void setTimeOfArrival(Instant timeOfArrival) {
         this.timeOfArrival = timeOfArrival;
+    }
+    public long getResponseTime() {
+        return ResponseTime;
+    }
+
+    public void setResponseTime(long responseTime) {
+        ResponseTime = responseTime;
+    }
+
+    public long getTurnAroundTime() {
+        return turnAroundTime;
+    }
+
+    public void setTurnAroundTime(long turnAroundTime) {
+        this.turnAroundTime = turnAroundTime;
     }
 }
